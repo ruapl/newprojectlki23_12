@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <!-- script for form validation -->
+    <script>
+        function validateForm() {
+        let x1 = document.forms["myForm"]["fname"].value;
+                if (x1 == "") {
+                    alert("Name must be filled out");
+                    return false;
+        }
+        
+       
+        let x2 = document.forms["myForm"]["childname"].value;
+                if (x2 == "") {
+                    alert("Child Name must be filled out");
+                    return false;
+        }
+        
+      
+        let x3 = document.forms["myForm"]["email"].value;
+                if (x3 == "") {
+                    alert("Email must be filled out");
+                    return false;
+        }
+        
+       
+        let x4 = document.forms["myForm"]["mobile_no"].value;
+                if (x4 == "") {
+                    alert("Mobile No must be filled out");
+                    return false;
+        }
+        
+        
+        let x5 = document.forms["myForm"]["whatsApp_no"].value;
+                if (x5 == "") {
+                    alert("What's app no must be filled out");
+                    return false;
+        }
+        
+      
+        let x6 = document.forms["myForm"]["city"].value;
+                if (x6 == "") {
+                    alert("city must be filled out");
+                    return false;
+        }
+        let x7 = document.forms["myForm"]["submit"].value;
+                if (x7 == "") {
+                    alert("Please Fill the Form");
+                    return false;
+        }
+    }
+    // form validation finishes here.................................
+    // submit button...........................................
+    
+    
+    function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/eeXiiPH449WRGSnj/',
+        type:'post',
+        data:$("#form1").serializeArray(),
+        success: function(){
+          alert("Your Account is Created!!")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+} 
+   
+    </script>
+</head>
+<body>
+   <!-- nav bar -->
+   <div class="topnav">
+    <a href="homepage.html"><i class="fa fa-fw fa-home"></i>Home</a>
+    
+    <div class="topnav-right">
+      <a href="#"><i class="fa fa-fw fa-user"></i>My Account</a>
+      
+      <a class="nav-link" href="tel:7517863457" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><i class="fa fa-fw fa-phone"></i></a>
+    </div>
+  </div>
+  <br><br>
+
+  
+   <!-- form -->
+    <form  id="form1"  name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+       <br><br>
+
+        Child Name: <input type="text" name="childname">
+        <br><br>
+
+        Email ID: <input type="text" name="email">
+        <br><br>
+
+        Mobile No: <input type="text" name="mobile_no">
+        <br><br>
+
+        What's App No: <input type="text" name="whatsApp_no">
+        <br><br>
+
+        City: <input type="text" name="city">
+        <br><br>
+
+      </form>
+      <input type="submit" class="button" onclick="SubForm()" value="Submit">
+      <!-- <button onclick="SubForm()">Submit</button>
+</body> -->
+</html>

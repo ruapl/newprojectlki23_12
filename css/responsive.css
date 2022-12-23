@@ -1,0 +1,118 @@
+/* mobile view  */
+@media (max-width: 565px) {
+    body {
+         display: grid;
+         margin: 2px;
+    }
+    .title p{
+        /* margin-top: 30px; */
+        margin-left: 20px;
+        font-size: 40px;
+        /* text-align: center; */
+        font-family: 'Rubik Spray Paint', cursive;
+    }
+    .logo img{
+        width: 500px;
+        height: 350px;
+        padding: 0px 80px;
+        opacity: 1;
+    }
+
+    .bearbg 
+    {
+    
+        background-image:url('../image/Background\ -3.png');
+        background-size: cover;
+        height: 800px;
+    }
+    .bear img
+    {
+        width: 480px;
+        height:580px;
+        padding: 0px 5px;
+        padding-top: 130px;
+    
+    }
+    /* comic */
+  
+/* comic */
+.comic img
+{
+   width:480px;
+    height:450px;
+  padding: 0px 15px;
+}
+/* matari store*/
+.store
+{
+  width:100%;
+  height:350px;
+  background-color: bisque;
+}
+/* Membership */
+.Membership
+{
+  width: 100%;
+  height: 350px;
+  background-color: darkgray;
+}
+/* free download */
+.download
+{
+  width: 100%;
+  height: 350px;
+  background-color: bisque ;
+}
+/* PARENTING TIPS */
+.parenting
+{
+  width: 100%;
+  height:350px;
+  background-color:darkgray;
+}
+/* footer */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.row
+{
+  background-color: black;
+  height:900px;
+}
+.footerlogo img
+{
+  align-items: center;
+ width: 350px;
+ height: 250px;
+ padding-top: 250px;
+ padding: 0px 50px;
+}
+.footer-1
+{
+  padding-top: 150px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 24px;
+}
+.footer-1 p
+{
+  color: white;
+  text-align: center;
+ 
+}
+}
+
+/* tab screen */
+@media (max-width: 565px)
+{
+
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script language="javascript">
+        function SelectRedirect(){
+        // ON selection of section this function will work
+        //alert( document.getElementById('s1').value);
+        
+        switch(document.getElementById('s1').value)
+        {
+        case "PATTM":
+        window.location="";
+        break;
+        
+        case "GPAY":
+        window.location="";
+        break;
+        
+        case "PHONEPE":
+        window.location="";
+        break;
+         
+        default:
+        window.location="../"; // if no selection matches then redirected to home page
+        break;
+        }// end of switch 
+        }
+        ////////////////// 
+        </script>
+</head>
+<body>
+    <h1>THIS IS THE RENEW PAGE </h1>
+
+    <P>Description About the Plan:...........</P>
+    <SELECT id="s1" NAME="section" onChange="SelectRedirect();">
+        <Option value="">Select Section</option>
+        <Option value="PAYTM">Paytm</option>
+        <Option value="GPAY">Gpay</option>
+        <Option value="PHONEPE">Phonepe</option>
+        <!-- <Option value="JS">JavaScript</option>
+        <Option value="HTML">HTML</option> -->
+        </SELECT>
+    <a href="../paypage/pay.html"><button>Pay</button></a>
+</body>
+</html>

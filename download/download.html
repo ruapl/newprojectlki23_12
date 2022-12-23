@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+    <title>LKI-Membership Page</title>
+    <!-- script for data submission in excel  -->
+    <script>
+
+        function validateForm() {
+        let x1 = document.forms["myForm"]["email_id"].value;
+                if (x1 == "") {
+                    alert("Email Id must be filled out");
+                    return false;
+        }
+        
+       
+        let x2 = document.forms["myForm"]["mobile_no"].value;
+                if (x2 == "") {
+                    alert(" Mobile No must be filled out");
+                    return false;
+        }
+    }   
+
+    // function for saving the person information into excel-sheet
+    function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/lLuikMToOFr5aRu4/',
+        type:'post',
+        data:$("#form1").serializeArray(),
+        success: function(){
+          alert("Download will complete soon!!")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+} 
+    </script>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="topnav">
+        <a class="active" href="#home"><i class="fa fa-fw fa-home"></i>Home</a>
+        
+        <div class="topnav-right">
+          <a href="./myaccount/myaccount.html"><i class="fa fa-fw fa-user"></i>My Account</a>
+          
+          <a class="nav-link" href="tel:7517863457" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><i class="fa fa-fw fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="member">
+        <p>DOWNLOADS</p>
+      </div>
+      <!-- row&column -->
+      <div class="row"> 
+        <div class="column">
+            <div class="col-md-4">
+               <div class="team-1">
+                <div class="button-container">
+                    <button>
+                      FREE DOWNLOAD
+                    </button>  
+                  </div>
+                  <dialog>
+                    <div class="download">
+                      FREE DOWNLOADS...
+                    </div> 
+                    <br>
+                    <form  id="form1"  name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+                        Email ID: <input type="text" name="email_id">
+                        <br><br>
+                        Mobile No:<input type="text" name="mobile_no">
+                    </form> 
+                    <div>
+                        <br>
+                      <button class="close" onclick="SubForm()">DOWNLOAD</button>
+                      <!-- <input type="submit" class="button" onclick="SubForm()" value="DOWNLOAD"> -->
+                     
+                    </div>
+                  </dialog>
+                  <script>
+                    const modal = document.querySelector("dialog")
+
+                    document.querySelector(".button-container button").addEventListener("click", () => {
+                    modal.showModal();
+                    document.querySelector('body').classList.add("blur")
+                    });
+
+                    const closeBtns = document.querySelectorAll(".close");
+
+                    closeBtns.forEach( (btn) => {
+                    btn.addEventListener("click", () => {
+                        console.log("You clicked a button inside the modal.  I'll close now.");
+                        document.querySelector('body').classList.remove("blur");
+                        modal.close();
+                    })
+                    });
+
+                    // Close dialog
+                    const dialog = document.querySelector("dialog");
+                    dialog.addEventListener("click", ( event ) => {
+                    if (event.target === dialog) {
+                        console.log("you clicked outside the modal so closing");
+                        modal.close();
+                        document.querySelector('body').classList.remove("blur");
+                    }
+
+});
+                  </script>
+               </div>
+
+            </div>
+        </div>
+        <div class="column">
+         <div class="col-md-4">
+            <!-- <a href=""><p>DOWNLOADS FOR MEMBERS</p></a> -->
+        </div>
+        </div>
+
+        <div class="column">
+            <div class="col-md-4">
+               <!-- <p>---------------------------------------------------</p> -->
+            </div>
+           </div>
+      </div>
+</body>
+</html> 

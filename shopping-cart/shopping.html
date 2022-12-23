@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title>Shopping Cart Example</title>
+    
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	<!-- Demo CSS (No need to include it into your project) -->
+	<link rel="stylesheet" href="css/demo.css">
+
+  <!-- <script language="javascript">
+    function SelectRedirect(){
+    // ON selection of section this function will work
+    //alert( document.getElementById('s1').value);
+    
+    switch(document.getElementById('s1').value)
+    {
+    case " PAYTM":
+    window.location="";
+    break;
+    
+    case "GPAY":
+    window.location="";
+    break;
+    
+    case "PHONEPE":
+    window.location="";
+    break; -->
+    <!-- // case "":
+    // window.location="https://www.w3schools.com/whatis/whatis_js.asp";
+    // break;
+    
+    // case "HTML":
+    // window.location="./f1/h1.html";
+    // break;
+    
+    /// Can be extended to other different selections of SubCategory //////
+    default:
+    window.location="../"; // if no selection matches then redirected to home page
+    break;
+    }// end of switch 
+    }
+    //////////////////  -->
+    </script>
+  
+  </head>
+  <body>
+
+    <div class="topnav">
+      <a class="active" href="#home"><i class="fa fa-fw fa-home"></i>Home</a>
+      
+      <div class="topnav-right">
+        <a href="./myaccount/myaccount.html"><i class="fa fa-fw fa-user"></i>My Account</a>
+        
+        <a class="nav-link" href="tel:7517863457" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><i class="fa fa-fw fa-phone"></i></a>
+      </div>
+    </div>
+
+    <div class="shopping">
+      <p>WELCOME TO MATARI STORE</p>
+    </div>
+ 
+ </header>
+  
+      
+ <main>
+     <!-- Start DEMO HTML (Use the following code into your project)-->
+    <div class="container"> 
+   
+   <div id="alerts"></div>
+<div class="productcont">
+        <div class="product">
+            <img class="productimage" src="./images/book1.png"/>
+            <h3 class="productname">worksheet 1</h3>
+            <p></p>
+            <p class="price">Rs.39</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+        <div class="product">
+            <img class="productimage" src="./images/book2.png"/>
+            <h3 class="productname">worksheet 2</h3>
+            <p></p>
+            <p class="price">Rs.49</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+        <!-- <div class="product">
+            <img class="productimage" src="./images/book3.png"/>
+            <h3 class="productname">worksheet 3</h3>
+            <p>Product description excerpt...</p>
+            <p class="price">Rs.35</p>
+            <button class="addtocart">Add To Cart</button>
+        </div> -->
+        </div>
+        <div class="cart-container">
+          <h2>Cart</h2>
+          <table>
+            <thead>
+              <tr>
+              <th><strong>Product</strong></th>
+              <th><strong>Price</strong></th>
+            </tr>
+            </thead>
+            <tbody id="carttable">
+            </tbody>
+          </table>
+          <hr>
+          <table id="carttotals">
+            <tr>
+              <td><strong>Items</strong></td>
+              <td><strong>Total</strong></td>
+            </tr>
+            <tr>
+              <td>x <span id="itemsquantity">0</span></td>
+             
+              <td>Rs<span id="total">0</span></td>
+            </tr></table>
+
+            
+          <!-- <div class="cart-buttons"> 
+            <SELECT id="s1" NAME="section" onChange="SelectRedirect();">
+              <Option value="">Select Section</option>
+              <Option value="PAYTM">Paytm</option>
+              <Option value="GPAY">Gpay</option>
+              <Option value="PHONEPE">Phonepe</option>
+             
+              </SELECT> -->
+
+            <button id="emptycart">Empty Cart</button>
+            <!-- <button onclick="document.location='paypage\linkpe.html'">Place Order</button> -->
+           <a href="../paypage/linkpe.html"><button class="button-1">Place order</button></a>
+          </div>
+        </div>
+</div>
+<!-- partial -->
+
+     <!-- END EDMO HTML (Happy Coding!)-->
+ </main>
+ 
+      
+  <!-- <footer class="credit">Author: Jasmine Smalley - Distributed By: <a title="Awesome web design code & scripts" href="https://www.codehim.com?source=demo-page" target="_blank">CodeHim</a></footer> -->
+
+        <script  src="./js/script.js"></script> 
+  </body>
+</html>
